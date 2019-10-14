@@ -1,0 +1,5 @@
+{
+    "board": "esp32:esp32:esp32cam",
+    "sketch": "ESP32CamRtsp.ino",
+    "port": "COM5"
+}
