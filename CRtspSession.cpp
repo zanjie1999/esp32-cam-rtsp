@@ -316,7 +316,7 @@ void CRtspSession::Handle_RtspSETUP()
         snprintf(Transport,sizeof(Transport),"RTP/AVP/TCP;unicast;interleaved=0-1");
     else
         snprintf(Transport,sizeof(Transport),
-                 "RTP/AVP;unicast;destination=127.0.0.1;source=127.0.0.1;client_port=%i-%i;server_port=%i-%i",
+                 "RTP/AVP;unicast;destination=127.0.0.1:554;source=127.0.0.1;client_port=%i-%i;server_port=%i-%i",
                  m_ClientRTPPort,
                  m_ClientRTCPPort,
                  m_Streamer->GetRtpServerPort(),
@@ -344,7 +344,7 @@ void CRtspSession::Handle_RtspPLAY()
              "%s\r\n"
              "Range: npt=0.000-\r\n"
              "Session: %i\r\n"
-             "RTP-Info: url=rtsp://127.0.0.1:8554/mjpeg/1/track1\r\n\r\n",
+             "RTP-Info: url=rtsp://127.0.0.1:554/mjpeg/1/track1\r\n\r\n",
              m_CSeq,
              DateHeader(),
              m_RtspSessionID);
